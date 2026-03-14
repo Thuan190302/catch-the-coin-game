@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+<title>Catch The Coin</title>
+
+<style>
+
+body{
+text-align:center;
+font-family:Arial;
+background:#111;
+color:white;
+}
+
+#game{
+width:400px;
+height:400px;
+border:2px solid white;
+margin:auto;
+position:relative;
+}
+
+.coin{
+width:50px;
+height:50px;
+background:gold;
+border-radius:50%;
+position:absolute;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Catch The Coin</h1>
+
+<h2>Score: <span id="score">0</span></h2>
+
+<h2>Time: <span id="time">30</span></h2>
+
+<div id="game"></div>
+
+<script>
+
+let score = 0
+let time = 30
+
+let game = document.getElementById("game")
+
+function spawnCoin(){
+
+let coin = document.createElement("div")
+
+coin.classList.add("coin")
+
+let x = Math.random()*350
+let y = Math.random()*350
+
+coin.style.left = x+"px"
+coin.style.top = y+"px"
+
+coin.onclick = function(){
+
+score++
+
+document.getElementById("score").innerText = score
+
+coin.remove()
+
+}
+
+game.appendChild(coin)
+
+setTimeout(function(){
+
+coin.remove()
+
+},1000)
+
+}
+
+setInterval(spawnCoin,800)
+
+let timer = setInterval(function(){
+
+time--
+
+document.getElementById("time").innerText = time
+
+if(time <= 0){
+
+clearInterval(timer)
+
+alert("Game Over! Score: "+score)
+
+}
+
+},1000)
+
+</script>
+
+</body>
+
+</html>
