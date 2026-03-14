@@ -1,6 +1,14 @@
-Just built my first browser game with HTML + JavaScript 🎮
+# Catch The Coin Game 🎮
 
-Try it here:
+A simple browser game built with HTML, CSS and JavaScript.
+
+## Play the game
 https://thuan190302.github.io/catch-the-coin-game/
 
-Built using GitHub Pages.
+## How to play
+Click the coin before it disappears to earn points.
+
+## Features
+- Score system
+- Countdown timer
+- Random coin spawn
